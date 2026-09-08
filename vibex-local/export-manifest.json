@@ -1,0 +1,19 @@
+{
+  "app_id": "app-7e4dedb2838142d2a9ca577990710a05",
+  "name": "做一个网页的codeagent工具并且可以授权操作本地文",
+  "exported_at": "2026-09-07T11:48:36.504991+00:00",
+  "source": "dev-container",
+  "includes_pb_data": false,
+  "removed_sensitive_files": [],
+  "entrypoints": {
+    "macos": "vibex-local/start-macos.sh",
+    "linux": "vibex-local/start-linux.sh",
+    "windows": "vibex-local/start-windows.bat"
+  },
+  "coding_agent_guidance": {
+    "skill": ".vibex/skills/vibex-app-source-roundtrip/SKILL.md",
+    "codex": "AGENTS.md",
+    "claude_code": "CLAUDE.md",
+    "cursor": ".cursor/rules/vibex-source-roundtrip.mdc"
+  }
+}

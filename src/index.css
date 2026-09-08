@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- 主题 token：深色为默认，.theme-light 覆盖为浅色 ---------- */
+:root {
+  --background: 222 18% 5%;
+  --foreground: 220 22% 92%;
+  --panel: 221 15% 7.5%;
+  --panel-2: 221 13% 10%;
+  --panel-3: 220 12% 14.5%;
+  --border: 220 12% 17%;
+  --muted: 221 10% 55%;
+  --primary: 152 62% 46%;
+  --primary-foreground: 160 84% 6%;
+  --codebg: 226 18% 4%;
+  --input-bg: 221 14% 9%;
+  --danger: 0 68% 58%;
+  --warn: 40 92% 56%;
+  --radius: 10px;
+
+  --syn-key: 262 78% 74%;
+  --syn-str: 140 40% 58%;
+  --syn-num: 36 92% 62%;
+  --syn-com: 221 10% 44%;
+  --syn-fn: 205 88% 66%;
+  --syn-type: 172 60% 56%;
+  --syn-var: 220 18% 87%;
+  --syn-punc: 220 10% 62%;
+}
+
+.theme-light {
+  --background: 220 25% 97%;
+  --foreground: 224 22% 14%;
+  --panel: 0 0% 100%;
+  --panel-2: 220 22% 96.5%;
+  --panel-3: 220 18% 93%;
+  --border: 220 14% 87.5%;
+  --muted: 222 10% 42%;
+  --primary: 152 58% 31%;
+  --primary-foreground: 0 0% 100%;
+  --codebg: 224 25% 96%;
+  --input-bg: 0 0% 100%;
+  --danger: 0 62% 46%;
+  --warn: 32 85% 40%;
+
+  --syn-key: 262 62% 48%;
+  --syn-str: 145 60% 28%;
+  --syn-num: 30 80% 40%;
+  --syn-com: 220 8% 56%;
+  --syn-fn: 208 82% 40%;
+  --syn-type: 172 68% 26%;
+  --syn-var: 224 20% 22%;
+  --syn-punc: 220 8% 46%;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Roboto, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 语法高亮 ---------- */
+.syn-key { color: hsl(var(--syn-key)); }
+.syn-str { color: hsl(var(--syn-str)); }
+.syn-num { color: hsl(var(--syn-num)); }
+.syn-com { color: hsl(var(--syn-com)); font-style: italic; }
+.syn-fn { color: hsl(var(--syn-fn)); }
+.syn-type { color: hsl(var(--syn-type)); }
+.syn-var { color: hsl(var(--syn-var)); }
+.syn-punc { color: hsl(var(--syn-punc)); }
+
+/* ---------- 滚动条 ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted) / 0.5);
+  background-clip: content-box;
+}
+
+/* 中英混排对齐（保留平台工具类兼容性） */
+.cjk-latin {
+  font-size-adjust: 0.56;
+  vertical-align: var(--cjk-latin-shift, -0.15em);
+}
