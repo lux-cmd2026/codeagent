@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { APP_ROOT, DATA_DIR, SESSIONS_DIR, SETTINGS_FILE, readJson, writeJson, uid, ensureDataDir } from './util.mjs'
 
-export const DEFAULT_CWD = path.join(APP_ROOT, 'project')
+export const DEFAULT_CWD = process.env.FORGE_CWD || path.join(APP_ROOT, 'project')
 
 ensureDataDir()
 

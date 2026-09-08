@@ -3,7 +3,7 @@ import path from 'node:path'
 import crypto from 'node:crypto'
 
 export const APP_ROOT = path.resolve(import.meta.dirname, '..')
-export const DATA_DIR = path.join(APP_ROOT, 'agent-data')
+export const DATA_DIR = process.env.PB_DATA_DIR || path.join(APP_ROOT, 'agent-data')
 export const SESSIONS_DIR = path.join(DATA_DIR, 'sessions')
 export const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json')
 

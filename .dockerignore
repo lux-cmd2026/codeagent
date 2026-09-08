@@ -1,0 +1,37 @@
+node_modules
+dist
+.vite
+*.log
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# VibeX internal (never in Docker image)
+.vibex
+vibex-local
+pocketbase
+agent-data
+.cursor
+
+# Dev tooling
+*.tsbuildinfo
+coverage
+.turbo
+__pycache__
+
+# Git
+.git
+.gitignore
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Render blueprint + Docker (for infra, not app code)
+render.yaml
+Dockerfile
+.dockerignore
+docker-compose*.yml

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: forge-app
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    healthCheckPath: /api/health
+    autoDeploy: true
+    regions:
+      - us-east
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: NODE_VERSION
+        value: 24
+      - key: PB_DATA_DIR
+        value: /app/pb_data
+    volumes:
+      - name: forge-data
+        mountPath: /app/pb_data
+        readOnly: false
+    directories:
+      - /app/pb_data
